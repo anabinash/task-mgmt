@@ -30,7 +30,11 @@ pipeline {
 
         stage('Deploy Application') {
             steps {
-                echo 'Deployment stage will be configured with database credentials.'
+              withCredentials([
+            string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD')])
+             {
+               bat 'docker compose up -d --force-recreate'
+             }
             }
         }
     }
