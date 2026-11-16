@@ -1,0 +1,39 @@
+
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: Taskdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d Taskdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    image: taskmanagement-backend:latest
+    ports:
+      - "9096:9096"
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/Taskdb
+      DB_USERNAME: postgres
+      DB_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    image: taskmanagement-frontend:latest
+    ports:
+      - "5173:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

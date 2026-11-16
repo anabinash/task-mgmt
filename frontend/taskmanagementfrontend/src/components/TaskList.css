@@ -1,0 +1,163 @@
+
+.task-page {
+    min-height: calc(100vh - 65px);
+    background: #f8fafc;
+    padding: 40px 50px;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.task-header h1 {
+    margin: 20px;
+    color: #1e293b;
+}
+
+.task-header p {
+    color: #64748b;
+    margin-top: 8px;
+}
+
+.add-task-button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.add-task-button:hover {
+    background: #1d4ed8;
+}
+
+.task-table-container {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.task-table th {
+    background: #f1f5f9;
+    color: #475569;
+    text-align: left;
+    padding: 16px;
+    font-size: 14px;
+}
+
+.task-table td {
+    padding: 16px;
+    border-top: 1px solid #e2e8f0;
+    color: #475569;
+}
+
+.task-table tr:hover {
+    background: #f8fafc;
+}
+
+.task-name {
+    font-weight: 600;
+    color: #1e293b !important;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #e2e8f0;
+}
+
+.status.todo {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status.in_progress {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status.completed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.edit-button,
+.delete-button {
+    border: none;
+    padding: 7px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 7px;
+}
+
+.edit-button {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.delete-button {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.edit-button:hover {
+    background: #bfdbfe;
+}
+
+.delete-button:hover {
+    background: #fecaca;
+}
+
+.empty-state {
+    background: white;
+    text-align: center;
+    padding: 70px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.empty-state h2 {
+    color: #334155;
+}
+
+.empty-state p {
+    color: #64748b;
+}
+
+.empty-state button {
+    margin-top: 15px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.page-message {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 20px;
+    color: #64748b;
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 12px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
